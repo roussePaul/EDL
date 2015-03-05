@@ -1,14 +1,11 @@
-//var paths = [];
-
 $(document).ready(function(){
+
+	var paths = [];
+
 
 	  //document.oncontextmenu = function() {return false;};
 
 
-	$("input[type='submit']").click(function(){
-		$("iframe").attr("src",$("input[name='url']").val());
-		document.getElementById('the-iframe-id').contentWindow.onload = function() {$("iframe").contents().find("body").append("<script src='script.js'><\/script>")};
-		});
 	$("*:not(:has(*))").on('contextmenu', function(e) {
 		console.log("rClick");
 			paths.push(getElementPath2(this));
