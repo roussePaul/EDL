@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Page Title</title>
+
+		<script src="jquery.min.js"></script>
+		<style type="text/css">
+			html, body {
+				height: 90%;
+			}
+		</style>
+
+  <script>
+		$(document).ready(function(){
+			$("input[type='submit']").click(function(){
+				$("iframe").attr("src",$("input[name='url']").val());
+				document.getElementById('iframe').contentWindow.onload = function() {
+					$("#iframe")[0].contents().find("body").append("<script src='script.js'><\/script>");
+				};
+				});
+			f = function()
+			{
+				$("iframe").contents().find("head").append("<script type='text/javascript' src='script.js'><\/script>");
+			};
+			});
+		
+
+		</script>
+  </head>
+		
+
+	<body>
+		Url: <input type="text" name="url">
+		<input type="submit">
+		</br>
+		<p class="c1 c2 zedihdkjs" id="lklkj">Click</p>
+		<p class="c2" id="lklkj">Click</p>
+		<p class="c3" id="lklkj">Click</p>
+		<p class="c1" id="lklkj">Click</p>
+		<p class="c1 c2" id="lklkj">Click</p>
+		<p class="clean" id="lklkj">Clean</p>
+		<iframe id="iframe" src="" width="100%" onLoad="f();"></iframe>
+		
+		
+	</body>
+
+</html>
